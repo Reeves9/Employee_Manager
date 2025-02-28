@@ -1,0 +1,20 @@
+<!-- Using KDE Breeze Dark colors and Bootstrap classes -->
+<div class="container mt-4">
+  <% if notice %>
+    <div class="alert alert-success" style="background-color: #2ecc71; color: #232629;">
+      <%= notice %>
+    </div>
+  <% end %>
+
+  <div class="card" style="background-color: #31363b; color: #eff0f1; border-color: #3daee9;">
+    <div class="card-body">
+      <%= render @employee %>
+    </div>
+  </div>
+
+  <div class="mt-4 d-flex gap-3">
+    <%= link_to "Edit this employee", edit_employee_path(@employee), class: "btn btn-primary", style: "background-color: #3daee9; border-color: #3daee9;" %>
+    <%= link_to "Back to employees", employees_path, class: "btn btn-secondary", style: "background-color: #31363b; border-color: #3daee9;" %>
+    <%= button_to "Destroy this employee", @employee, method: :delete, class: "btn btn-danger", style: "background-color: #da4453; border-color: #da4453;", data: { confirm: "Are you sure?" } %>
+  </div>
+</div>

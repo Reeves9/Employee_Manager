@@ -1,0 +1,31 @@
+<!-- Apply Bootstrap dark theme with Breeze Dark colors -->
+<div class="container-fluid bg-dark text-light py-4" style="min-height: 100vh;">
+  <% if notice %>
+    <div class="alert alert-success" role="alert">
+      <%= notice %>
+    </div>
+  <% end %>
+
+  <% content_for :title, "Employees" %>
+
+  <h1 class="display-4 mb-4">Employees</h1>
+
+  <div id="employees" class="row g-4">
+    <% @employees.each do |employee| %>
+      <div class="col-md-4">
+        <div class="card bg-dark border-secondary">
+          <div class="card-body" style="background-color: #232629;">
+            <%= render employee %>
+            <div class="mt-3">
+              <%= link_to "Show this employee", employee, class: "btn btn-primary", style: "background-color: #1d99f3; border-color: #1d99f3;" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="mt-4">
+    <%= link_to "New employee", new_employee_path, class: "btn btn-success", style: "background-color: #27ae60; border-color: #27ae60;" %>
+  </div>
+</div>

@@ -1,0 +1,36 @@
+<% content_for :title, "New employee" %>
+
+<div class="container mt-4">
+  <h1 class="text-light mb-4">New employee</h1>
+
+  <div class="card bg-dark text-light border-secondary">
+    <div class="card-body">
+      <%= render "form", employee: @employee %>
+    </div>
+  </div>
+
+  <div class="mt-3">
+    <%= link_to "Back to employees", employees_path, class: "btn btn-outline-info" %>
+  </div>
+</div>
+
+<style>
+  body {
+    background-color: #232629;
+    color: #eff0f1;
+  }
+  .card {
+    background-color: #31363b !important;
+  }
+  .form-control {
+    background-color: #232629;
+    border-color: #3daee9;
+    color: #eff0f1;
+  }
+  .form-control:focus {
+    background-color: #2d3136;
+    color: #eff0f1;
+    border-color: #3daee9;
+    box-shadow: 0 0 0 0.25rem rgba(61, 174, 233, 0.25);
+  }
+</style>

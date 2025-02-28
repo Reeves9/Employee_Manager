@@ -1,0 +1,42 @@
+<%= form_with(model: employee, class: "bg-dark text-light p-4 rounded") do |form| %>
+  <% if employee.errors.any? %>
+    <div class="alert alert-danger">
+      <h2><%= pluralize(employee.errors.count, "error") %> prohibited this employee from being saved:</h2>
+
+      <ul>
+        <% employee.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="mb-3">
+    <%= form.label :name, class: "form-label text-light" %>
+    <%= form.text_field :name, class: "form-control bg-dark text-light border-secondary" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :department, class: "form-label text-light" %>
+    <%= form.text_field :department, class: "form-control bg-dark text-light border-secondary" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :address, class: "form-label text-light" %>
+    <%= form.text_field :address, class: "form-control bg-dark text-light border-secondary" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :post, class: "form-label text-light" %>
+    <%= form.text_field :post, class: "form-control bg-dark text-light border-secondary" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :salary, class: "form-label text-light" %>
+    <%= form.text_field :salary, class: "form-control bg-dark text-light border-secondary" %>
+  </div>
+
+  <div>
+    <%= form.submit class: "btn btn-primary", style: "background-color: #3daee9; border-color: #3daee9;" %>
+  </div>
+<% end %>
